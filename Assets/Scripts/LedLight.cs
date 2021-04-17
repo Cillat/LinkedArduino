@@ -25,4 +25,19 @@ public class LedLight : MonoBehaviour
             serialHandler.Write("1");
         }
     }
+
+    void OnDataReceived(string message)
+    {
+        var data = message.Split(
+                new string[] { "\n" }, System.StringSplitOptions.None);
+        if (data.Length < 2) return;
+
+        try
+        {
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning(e.Message);
+        }
+    }
 }
